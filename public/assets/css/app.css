@@ -1,0 +1,36 @@
+*{
+  font-family: 'Oswald', sans-serif;
+font-family: 'Space Grotesk', sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+::-webkit-scrollbar {
+  display: none;
+}
+}
+
+.box-shadow{
+-webkit-box-shadow: -1px 7px 13px -3px rgba(0, 0, 0, 0.441);
+-moz-box-shadow: -1px 7px 13px -3px rgba(0, 0, 0, 0.359);
+box-shadow: -1px 7px 13px -3px rgba(0, 0, 0, 0.247);
+}
+
+.cta{
+  text-decoration: none;
+  color: black;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px) ; }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px) ; }
+  100% { transform: translateX(0); }
+}
+
+.animate-empty{
+  animation: shake 0.9s ease-in-out infinite;
+}
+
+
