@@ -36,7 +36,7 @@ Route::get("/notes",[HomeController::class,"NewNotes"])->name("newnote");
 
 
 //update notes
-Route::get('/update/{id}',[HomeController::class,'update'])->name("update");
+Route::get('/update/{id}',[HomeController::class,'update'])->name("update")->middleware("islogged");;
 Route::post("/updatenotes/{id}",[HomeController::class,"updateNotes"])->name("updatenotes");
 
 // delete notes

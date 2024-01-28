@@ -51,6 +51,7 @@ class HomeController extends Controller
    }
 
    public function update($id){
+    
         $title = "Update notes";
         $route = "/updatenotes/".$id;
 
