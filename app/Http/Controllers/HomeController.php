@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Models\User;
 use \App\Models\notes;
+use Illuminate\Contracts\Session\Session;
 
 class HomeController extends Controller
 {
@@ -52,13 +53,19 @@ class HomeController extends Controller
 
    public function update($id){
     
+        $user_id = Session()->get("loginid");
+
         $title = "Update notes";
         $route = "/updatenotes/".$id;
 
-        $updatenotes = notes::find($id);
+        $updatenotes = notes::where("user_id","=",$user_id->id)->find($id);
       
-
+        if($updatenotes){
         return view("create",compact("title","route","updatenotes","id"));
+    }
+    else{
+        return view("404");
+    }
    }
 
    public function updateNotes($id,Request $request){

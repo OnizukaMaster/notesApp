@@ -41,3 +41,4 @@ Route::post("/updatenotes/{id}",[HomeController::class,"updateNotes"])->name("up
 
 // delete notes
 Route::get("/delete/{id}",[HomeController::class,"deleteNotes"])->name("delete");
+
