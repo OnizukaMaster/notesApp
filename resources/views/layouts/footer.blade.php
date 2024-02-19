@@ -10,7 +10,7 @@
       <div class="d-flex justify-content-between px-2">
       <p class="text-body-secondary">© 2024 Noto, Inc</p>
       <p class="text-body-secondary">Created By: <a href="https://www.linkedin.com/in/lalit-harwate-640a4b282
-        ">Lalit Harwate</a></p>
+        ">Lalit Harwate</a> | <a href="https://github.com/lalitharw/notesApp">Github</a></p>
     </div>
     </footer>
   </div>
