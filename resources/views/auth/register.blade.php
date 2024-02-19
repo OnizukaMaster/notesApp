@@ -5,7 +5,7 @@
 @endsection
 
 
-  
+
 @section("main-section")
 <div class="row d-flex justify-content-center align-items-center">
     <div class="col-sm-4 align-items-center box-shadow p-3 rounded-3"  >
@@ -15,6 +15,14 @@
     @if (Session::has("failed"))
         <p class="bg-danger p-2 rounded-2 text-white">{{Session::get("failed")}}</p>
     @endif
+
+    <div class="mb-3">
+      <label for="exampleInputName1" class="form-label">Name:</label>
+      <input type="name" value="{{old("name")}}" class="form-control" id="exampleInputName1" name="name" aria-describedby="nameHelp">
+      @error("name")
+        <p class="text-danger font-weight-bold">{{$message}}</p>
+      @enderror
+    </div>
 
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>

@@ -15,6 +15,10 @@
         <p class="bg-danger p-2 rounded-2 text-white">{{Session::get("failed")}}</p>
     @endif
 
+    @if (Session::has("success"))
+        <p class="bg-danger p-2 rounded-2 text-white">{{Session::get("success")}}</p>
+    @endif
+
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
