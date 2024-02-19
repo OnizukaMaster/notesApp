@@ -5,11 +5,11 @@
 @endsection
 
 
-
+  
 @section("main-section")
 <div class="row d-flex justify-content-center align-items-center">
     <div class="col-sm-4 align-items-center box-shadow p-3 rounded-3"  >
-<form method="post" action="{{url("loginuser")}}">
+<form method="post" action="{{url("registeruser")}}">
     @csrf
     <h3>Login In</h3>
     @if (Session::has("failed"))
@@ -18,16 +18,26 @@
 
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+      <input type="email" value="{{old("email")}}" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+      @error("email")
+        <p class="text-danger font-weight-bold">{{$message}}</p>
+      @enderror
     </div>
+
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Password</label>
       <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+      @error("password")
+      <p class="text-danger">{{$message}}</p>
+    @enderror
     </div>
 
     <div class="mb-3">
         <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
         <input type="password" class="form-control" name="cpassword" id="exampleInputPassword2">
+        @error("cpassword")
+        <p class="text-danger">{{$message}}</p>
+      @enderror
       </div>
    
     <button  type="submit" class="btn btn-dark rounded-pill justify-content-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">

@@ -13,6 +13,10 @@ class AuthController extends Controller
     }
 
     public function loginuser(Request $request){
+        $request->validate([
+            "email" => "required|email",
+            "password" => "required"
+        ]);
         $user = User::where("email","=",$request->email)->first();
 
         if($user){
@@ -25,13 +29,8 @@ class AuthController extends Controller
             }
         }
         else{
-
-            if($request->password ==  "" || $request->email ==""){
-            return back()->with("failed","Fields cannot be empty");
-            }
-            else{
                 return back()->with("failed","Not account found");
-            }
+            
         }
     }
 
@@ -41,8 +40,13 @@ class AuthController extends Controller
     }
 
     public function registeruser(Request $request){
+        $request->validate([
+            "email" => "required|email|unique:users,email",
+            "password" => "required|min:8",
+            "cpassword" => "required|same:password"
+        ]);
         $user = new User();
-        $user->name = $request->name;
+       
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
 
@@ -59,7 +63,7 @@ class AuthController extends Controller
 
     public function logout(){
         if(Session()->has("loginid")){
-            Session()->pull("loginid");
+            Session()->flush();
             return redirect()->route("login");
         }
     }
