@@ -7,7 +7,11 @@
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
       </ul>
-      <p class="text-center text-body-secondary">© 2023 Company, Inc</p>
+      <div class="d-flex justify-content-between px-2">
+      <p class="text-body-secondary">© 2024 Noto, Inc</p>
+      <p class="text-body-secondary">Created By: <a href="https://www.linkedin.com/in/lalit-harwate-640a4b282
+        ">Lalit Harwate</a></p>
+    </div>
     </footer>
   </div>
 

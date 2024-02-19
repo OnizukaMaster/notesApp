@@ -2,7 +2,7 @@
 @extends('layouts.main')
 
 @section("title")
-    Update
+    Add
 @endsection
 
 @section("main-section")
